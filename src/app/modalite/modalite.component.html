@@ -1,28 +1,22 @@
 <!--Menu TODO -->
-<div class='col s3'>
+<div class='col s2'>
   <div class='row'>
-    <a class="waves-effect waves-light btn green accent-4"><i class="small material-icons left">storage</i>Stock</a>
-  </div>
-  <div class='row'>
-    <a routerLink='/stockFrigo' routerLinkActive='active' class="waves-effect waves-light btn blue darken-2"><i class="small material-icons left">ac_unit</i>Stock Frigo</a>
-  </div>
-  <div class='row'>
-    <a class="waves-effect waves-light btn orange accent-4"><i class="small material-icons left">lock</i>Stock Sécurisé</a>
+    <a class="waves-effect waves-light btn green accent-4" routerLink='/stockFrigo' routerLinkActive='active' ><i class="small material-icons left">storage</i>Ajouter</a>
   </div>
 </div>
 
 <!--Stock list -->
-<div class='col s9'>
+<div class='col s10'>
   <router-outlet name='sub'></router-outlet>
   <ul class="collapsible">
     <li *ngFor='let m of medicaments'>
 
       <!--Collapsible header -->
       <div class="collapsible-header">
-        <div class='col s9'>
+        <div class='col s4'>
           {{m.Nom}}
         </div>
-        <div class='col s3'>
+        <div class='col s6'>
           <div *ngIf="m.Quantite > 15 ;else elseLow">
             <span class="new badge green" data-badge-caption=' unités'>{{m.Quantite}}</span>
           </div>
@@ -35,6 +29,10 @@
             <span class="new badge red" data-badge-caption='- Stock vide !'>{{m.Quantite}}</span>
           </ng-template>
         </div>
+        <div class='col s2'>
+            <a routerLink='/stockFrigo' routerLinkActive='active' class="waves-effect waves-light btn orange darken-2"><i class="small material-icons left">ac_unit</i></a>
+            <a class="waves-effect waves-light btn red accent-4"><i class="small material-icons left">lock</i></a>
+          </div>
       </div>
 
       <!--Collapsible body -->

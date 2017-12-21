@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { medicament } from '../medicament';
 
 @Component({
-  selector: 'stockCmpt',
-  templateUrl: './stock.component.html',
-  styleUrls: ['./stock.component.css'],
+  selector: 'modaliteCmpt',
+  templateUrl: './modalite.component.html',
+  styleUrls: ['./modalite.component.css'],
 })
-export class StockComponent implements OnInit {
+export class ModaliteComponent implements OnInit {
 
   medicaments : Array<medicament> = [
     {
@@ -37,13 +37,7 @@ export class StockComponent implements OnInit {
       Frigo:false,
       Securise:true
     },
-    {
-      Nom:'Lormétazépam',
-      Quantite:0,
-      Cout:1.45,
-      Frigo:false,
-      Securise:true
-    }
+
   ]
 
 
@@ -51,9 +45,9 @@ export class StockComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // $(document).ready(function(){
-    //   $('.collapsible').collapsible();
-    // });
+     $(document).ready(function(){
+       $('.collapsible').collapsible();
+     });
   }
 
 }

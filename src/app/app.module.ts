@@ -5,11 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
-import { StockComponent } from './stock/stock.component';
+import { ModaliteComponent } from './modalite/modalite.component';
 
 const appRoutes: Routes = [
   { path: 'prescription', component: PrescriptionComponent },
-  { path: 'stock', component: StockComponent }
+  { path: 'modalites', component: ModaliteComponent }
 ];
 
 @NgModule({
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     AppComponent,
     MenuBarComponent,
     PrescriptionComponent,
-    StockComponent
+    ModaliteComponent
   ],
   imports: [
     BrowserModule,
