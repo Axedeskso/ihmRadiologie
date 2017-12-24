@@ -1,0 +1,21 @@
+<div class='col s12'>
+  <router-outlet name='sub'></router-outlet>
+
+  <table class= 'highlight responsive-table'>
+      <thead>
+        <tr>
+            <th>IPP</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor='let p of patients'>
+            <td>{{p.Ipp}}</td>
+            <td>{{p.Nom}}</td>
+            <td>{{p.Prenom}}</td>
+          </tr>
+      </tbody>
+  </table>
+
+</div>

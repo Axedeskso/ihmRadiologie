@@ -1,4 +1,4 @@
-export class medicament {
+export class modalite {
   Nom: string;
   Quantite: number;
   Cout: number;

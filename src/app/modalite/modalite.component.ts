@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { medicament } from '../medicament';
+import { modalite } from './modalite';
 
 @Component({
   selector: 'modaliteCmpt',
@@ -8,7 +8,7 @@ import { medicament } from '../medicament';
 })
 export class ModaliteComponent implements OnInit {
 
-  medicaments : Array<medicament> = [
+  medicaments : Array<modalite> = [
     {
       Nom:'Nicardipine',
       Quantite:11,
@@ -40,14 +40,10 @@ export class ModaliteComponent implements OnInit {
 
   ]
 
-
-
   constructor() { }
 
   ngOnInit() {
-     $(document).ready(function(){
-       $('.collapsible').collapsible();
-     });
+    
   }
 
 }
