@@ -1,6 +1,3 @@
-import { venue } from "./venue";
-
-
 export class patient {
   Ipp: number;
   Nom: string;

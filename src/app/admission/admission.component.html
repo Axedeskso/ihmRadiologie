@@ -1,21 +1,34 @@
 <div class='col s12'>
+    <div class='row'>
+      <h3>Liste des patients admis</h3>
+   </div>
+</div>
+
+<div class='col s12'>
   <router-outlet name='sub'></router-outlet>
-
-  <table class= 'highlight responsive-table'>
-      <thead>
-        <tr>
-            <th>IPP</th>
-            <th>Nom</th>
-            <th>Prenom</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor='let p of patients'>
-            <td>{{p.Ipp}}</td>
-            <td>{{p.Nom}}</td>
-            <td>{{p.Prenom}}</td>
-          </tr>
-      </tbody>
-  </table>
-
+  <ul class="collapsible" data-collapsible="accordion">
+      <li>
+          <div class="collapsible-header">
+              <div class='col s4'><label>IPP</label></div>
+              <div class='col s4'><label>Nom</label></div>
+              <div class='col s4'><label>Prenom</label></div>
+          </div>
+      </li>
+    <li *ngFor='let p of patients'>
+        <div class="collapsible-header">
+            <div class='col s4'>
+              {{p.Ipp}}
+            </div>
+            <div class='col s4'>
+              {{p.Nom}}
+            </div>
+            <div class='col s4'>
+              {{p.Prenom}}
+            </div>
+        </div>
+        <div class='collapsible-body'>
+            <app-venue></app-venue>
+        </div>
+    </li>
+  </ul>
 </div>

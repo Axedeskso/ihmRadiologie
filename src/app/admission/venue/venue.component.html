@@ -1,0 +1,22 @@
+<ul class="collapsible" data-collapsible="accordion">
+    <li>
+        <div class="collapsible-header">
+            <div class='col s4'><label>IEP</label></div>
+            <div class='col s4'><label>Date d'entrée</label></div>
+            <div class='col s4'><label>Date de sortie</label></div>
+        </div>
+    </li>
+    <li *ngFor='let v of venues'>
+        <div class="collapsible-header">
+            <div class='col s4'>
+            {{v.Iep}}
+            </div>
+            <div class='col s4'>
+                {{v.Dd}}
+            </div>
+            <div class='col s4'>
+                {{v.Df}}
+                </div>
+        </div>
+    </li>
+</ul>
