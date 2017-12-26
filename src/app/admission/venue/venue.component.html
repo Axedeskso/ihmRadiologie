@@ -6,7 +6,7 @@
             <div class='col s4'><label>Date de sortie</label></div>
         </div>
     </li>
-    <li *ngFor='let v of venues'>
+    <li *ngFor='let v of venues' routerLink='/actes' routerLinkActive='active'>
         <div class="collapsible-header">
             <div class='col s4'>
             {{v.Iep}}
