@@ -6,7 +6,7 @@
             <div class='col s4'><label>Date de sortie</label></div>
         </div>
     </li>
-    <li *ngFor='let v of venues' routerLink='/actes' routerLinkActive='active'>
+    <li *ngFor='let v of venues' routerLink="/admission/venues/{{v.Iep}}" routerLinkActive='active'>
         <div class="collapsible-header">
             <div class='col s4'>
             {{v.Iep}}
@@ -16,7 +16,7 @@
             </div>
             <div class='col s4'>
                 {{v.Df}}
-                </div>
+            </div>
         </div>
     </li>
 </ul>

@@ -37,6 +37,8 @@ export class AdmissionComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {  }
+  ngOnInit() { 
+        
+   }
 
 }

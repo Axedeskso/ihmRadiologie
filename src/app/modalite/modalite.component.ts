@@ -8,36 +8,32 @@ import { modalite } from './modalite';
 })
 export class ModaliteComponent implements OnInit {
 
-  medicaments : Array<modalite> = [
+  modalites : Array<modalite> = [
     {
-      Nom:'Nicardipine',
-      Quantite:11,
-      Cout:0.15,
-      Frigo:false,
-      Securise:false
+      Nom:'CR',
+      Pacs:'ISIS',
+      Lien:'/resources/isis/'
     },
     {
-      Nom:'Paracétamol',
-      Quantite:100,
-      Cout:0.10,
-      Frigo:false,
-      Securise:false
+      Nom:'RF',
+      Pacs:'ISIS',
+      Lien:'/resources/isis/'
     },
     {
-      Nom:'Valsartan',
-      Quantite:50,
-      Cout:0.15,
-      Frigo:false,
-      Securise:false
+      Nom:'IO',
+      Pacs:'ISIS',
+      Lien:'/resources/isis/'
     },
     {
-      Nom:'Diazépam',
-      Quantite:0,
-      Cout:0.82,
-      Frigo:false,
-      Securise:true
+      Nom:'CT',
+      Pacs:'ISIS',
+      Lien:'/resources/isis/'
     },
-
+    {
+      Nom:'PX',
+      Pacs:'ISIS',
+      Lien:'/resources/isis/'
+    }
   ]
 
   constructor() { }

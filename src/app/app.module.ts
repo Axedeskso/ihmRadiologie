@@ -8,10 +8,14 @@ import { ModaliteComponent } from './modalite/modalite.component';
 import { AdmissionComponent } from './admission/admission.component';
 import { CcamComponent } from './ccam/ccam.component';
 import { VenueComponent } from './admission/venue/venue.component';
+import { ActeComponent } from './acte/acte.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const appRoutes: Routes = [
+  { path: '', component: DashboardComponent },
   { path: 'admission', component: AdmissionComponent },
   { path: 'admission/venues', component: VenueComponent },
+  { path: 'admission/venues/:id', component: ActeComponent },
   { path: 'ccam', component: CcamComponent },
   { path: 'modalites', component: ModaliteComponent }
 ];
@@ -23,7 +27,9 @@ const appRoutes: Routes = [
     ModaliteComponent,
     AdmissionComponent,
     CcamComponent,
-    VenueComponent
+    VenueComponent,
+    ActeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

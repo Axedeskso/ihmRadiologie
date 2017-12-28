@@ -1,28 +1,42 @@
-<div class='col s12'>
-  <router-outlet name='sub'></router-outlet>
-  <ul class="collapsible" data-collapsible="accordion">
+<div class="row">
+  <div class="col s12 m12">
+    <div class="chip">
+      Admission
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class='col s12'>
+    <ul class="collapsible" data-collapsible="accordion">
       <li>
-          <div class="collapsible-header">
-              <div class='col s4'><label>IPP</label></div>
-              <div class='col s4'><label>Nom</label></div>
-              <div class='col s4'><label>Prenom</label></div>
-          </div>
-      </li>
-    <li *ngFor="let p of patients" routerLink='/actes' routerLinkActive='active' >
         <div class="collapsible-header">
-            <div class='col s4'>
-              {{p.Ipp}}
-            </div>
-            <div class='col s4'>
-              {{p.Nom}}
-            </div>
-            <div class='col s4'>
-              {{p.Prenom}}
-            </div>
+          <div class='col s4'>
+            <label>IPP</label>
+          </div>
+          <div class='col s4'>
+            <label>Nom</label>
+          </div>
+          <div class='col s4'>
+            <label>Prenom</label>
+          </div>
+        </div>
+      </li>
+      <li *ngFor="let p of patients">
+        <div class="collapsible-header">
+          <div class='col s4'>
+            {{p.Ipp}}
+          </div>
+          <div class='col s4'>
+            {{p.Nom}}
+          </div>
+          <div class='col s4'>
+            {{p.Prenom}}
+          </div>
         </div>
         <div class='collapsible-body'>
-            <app-venue></app-venue>
+          <app-venue></app-venue>
         </div>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -1,16 +1,12 @@
 export class modalite {
   Nom: string;
-  Quantite: number;
-  Cout: number;
-  Frigo: boolean;
-  Securise: boolean;
+  Pacs: string;
+  Lien: string;
 
-  constructor(nom:string,quantite:number,cout:number,frigo:boolean,securise:boolean){
+  constructor(nom:string,pacs:string,link:string){
     this.Nom = nom;
-    this.Quantite = quantite;
-    this.Cout = cout;
-    this.Frigo = frigo;
-    this.Securise = securise;
+    this.Pacs = pacs;
+    this.Lien = link;
   }
 
 }

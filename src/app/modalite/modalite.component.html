@@ -1,45 +1,25 @@
-<!--Menu TODO -->
-<div class='col s2'>
-  <div class='row'>
-    <a class="waves-effect waves-light btn green accent-4" routerLink='/stockFrigo' routerLinkActive='active' ><i class="small material-icons left">storage</i>Ajouter</a>
-  </div>
-</div>
-
-<!--Stock list -->
-<div class='col s10'>
+<div class='col s12'>
   <router-outlet name='sub'></router-outlet>
   <ul class="collapsible" data-collapsible="accordion">
-    <li *ngFor='let m of medicaments'>
-
-      <!--Collapsible header -->
-      <div class="collapsible-header">
-        <div class='col s4'>
-          {{m.Nom}}
-        </div>
-        <div class='col s6'>
-          <div *ngIf="m.Quantite > 15 ;else elseLow">
-            <span class="new badge green" data-badge-caption=' unités'>{{m.Quantite}}</span>
+      <li>
+          <div class="collapsible-header">
+              <div class='col s4'><label>Modalité</label></div>
+              <div class='col s4'><label>Pacs</label></div>
+              <div class='col s4'><label>Lien</label></div>
           </div>
-          <ng-template #elseLow>
-            <div *ngIf="m.Quantite > 0 ;else elseEmpty">
-              <span class="new badge orange" data-badge-caption='unités - Stock bas !'>{{m.Quantite}}</span>
+      </li>
+    <li *ngFor="let m of modalites"  >
+        <div class="collapsible-header">
+            <div class='col s4'>
+              {{m.Nom}}
             </div>
-          </ng-template>
-          <ng-template #elseEmpty>
-            <span class="new badge red" data-badge-caption='- Stock vide !'>{{m.Quantite}}</span>
-          </ng-template>
+            <div class='col s4'>
+              {{m.Pacs}}
+            </div>
+            <div class='col s4'>
+              {{m.Lien}}
+            </div>
         </div>
-        <div class='col s2'>
-            <a routerLink='/stockFrigo' routerLinkActive='active' class="waves-effect waves-light btn orange darken-2"><i class="small material-icons left">ac_unit</i></a>
-            <a class="waves-effect waves-light btn red accent-4"><i class="small material-icons left">lock</i></a>
-          </div>
-      </div>
-
-      <!--Collapsible body -->
-      <div class='collapsible-body'>
-        test
-      </div>
-
     </li>
   </ul>
 </div>
