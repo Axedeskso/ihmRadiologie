@@ -5,8 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { ModaliteComponent } from './modalite/modalite.component';
+import { ModaliteService } from './modalite/modalite.service';
 import { AdmissionComponent } from './admission/admission.component';
+import { AdmissionService } from './admission/admission.service';
 import { CcamComponent } from './ccam/ccam.component';
+import { CcamService } from './ccam/ccam.service';
 import { VenueComponent } from './admission/venue/venue.component';
 import { ActeComponent } from './acte/acte.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -38,7 +41,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [AdmissionService, CcamService, ModaliteService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
-import { $ } from 'protractor';
-import { patient } from './patient';
+import { Patient } from './patient';
+import { AdmissionService } from './admission.service';
 
 @Component({
   selector: 'app-admission',
@@ -9,36 +8,14 @@ import { patient } from './patient';
   styleUrls: ['./admission.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class AdmissionComponent implements OnInit {
+export class AdmissionComponent {
 
-  patients : Array<patient> = [
-    {
-      Ipp: 31031993,
-      Nom: 'FROMENTIN',
-      Prenom: 'Axel'
-    },
-    {
-      Nom:'GARCIA GOZALVEZ',
-      Prenom: 'Pau',
-      Ipp: 4567894
-    },
-    {
-      Nom:'SINGER',
-      Prenom: 'Nicolas',
-      Ipp: 87756345
-    },
-    {
-      Nom:'PINGAUD',
-      Prenom: 'Hervé',
-      Ipp: 456789123
-    },
+  patients : Patient[];
 
-  ]
+  constructor(private admissionService : AdmissionService) { }
 
-  constructor() { }
-
-  ngOnInit() { 
-        
-   }
+  ngOnInit() : void { 
+    this.admissionService.getPatients().then(res => this.patients = res);
+  }
 
 }

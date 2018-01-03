@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ccam } from './ccam';
+import { CcamService } from './ccam.service';
 
 @Component({
   selector: 'app-ccam',
@@ -9,27 +10,12 @@ import { ccam } from './ccam';
 })
 export class CcamComponent implements OnInit {
 
-  ccams : Array<ccam> = [
-    {
-      Code: 'ZBQK002',
-  Libelle: 'Radiologie du thorax',
-  Cout: 10.0
-    },
-    {
-      Code: 'ZCQK002',
-  Libelle: 'Radiologie de l\'abdomen sans préparation',
-  Cout: 12.5
-    },
-    {
-      Code: 'EAQH002',
-  Libelle: 'Scannographie des vaisseaux encéphaliques',
-  Cout: 12.5
-    }
-  ]
+  ccams : ccam[];
 
-  constructor() { }
+  constructor(private ccamService : CcamService) { }
 
-  ngOnInit() {
+  ngOnInit() : void { 
+    this.ccamService.getCCams().then(res => this.ccams = res);
   }
 
 }

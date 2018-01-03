@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { modalite } from './modalite';
+import { ModaliteService } from './modalite.service';
 
 @Component({
   selector: 'modaliteCmpt',
@@ -8,38 +9,12 @@ import { modalite } from './modalite';
 })
 export class ModaliteComponent implements OnInit {
 
-  modalites : Array<modalite> = [
-    {
-      Nom:'CR',
-      Pacs:'ISIS',
-      Lien:'/resources/isis/'
-    },
-    {
-      Nom:'RF',
-      Pacs:'ISIS',
-      Lien:'/resources/isis/'
-    },
-    {
-      Nom:'IO',
-      Pacs:'ISIS',
-      Lien:'/resources/isis/'
-    },
-    {
-      Nom:'CT',
-      Pacs:'ISIS',
-      Lien:'/resources/isis/'
-    },
-    {
-      Nom:'PX',
-      Pacs:'ISIS',
-      Lien:'/resources/isis/'
-    }
-  ]
+  modalites : modalite[];
 
-  constructor() { }
+  constructor(private modaliteService : ModaliteService) { }
 
-  ngOnInit() {
-    
+  ngOnInit() : void { 
+    this.modaliteService.getModalites().then(res => this.modalites = res);
   }
 
 }
