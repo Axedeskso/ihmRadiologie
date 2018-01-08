@@ -9,16 +9,16 @@ export class AdmissionService {
 
   url = "http://localhost:8084/radiologie/webresources/patients";
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   getPatients() : Promise<Patient[]> {
-    //return this.http.get(this.url).toPromise().then(res => res.json()));
+    return this.http.get(this.url).toPromise().then(res => res.json()).catch(err => err);;
     
-    return Promise.resolve([
-      {Ipp:31031993, Nom:'Fromentin', Prenom: 'Axel'},
-      {Ipp:23111992, Nom:'Guillemant', Prenom: 'Chloe'}
-    ]
-    );
+    //return Promise.resolve([
+      //{Ipp:31031993, Nom:'Fromentin', Prenom: 'Axel'},
+      //{Ipp:23111992, Nom:'Guillemant', Prenom: 'Chloe'}
+    //]
+    //);
   }
 
 }

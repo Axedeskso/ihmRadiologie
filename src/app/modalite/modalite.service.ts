@@ -7,18 +7,11 @@ export class ModaliteService {
 
   url = "http://localhost:8084/radiologie/webresources/modalites";
 
-  constructor() { }
+  constructor(private http: Http) { }
 
   getModalites() : Promise<modalite[]> {
-    //return this.http.get(this.url).toPromise().then(res => res.json()));
-    
-    return Promise.resolve([
-      {Nom:'CR',Pacs:'ISIS',Lien:'/resources/isis/'},
-      {Nom:'RF',Pacs:'ISIS',Lien:'/resources/isis/'},
-      {Nom:'IO',Pacs:'ISIS',Lien:'/resources/isis/'},
-      {Nom:'CT',Pacs:'ISIS',Lien:'/resources/isis/'},
-      {Nom:'PX',Pacs:'ISIS',Lien:'/resources/isis/'}
-    ]);
+    return this.http.get(this.url).toPromise().then(res => res.json());
+
   }
 
 }

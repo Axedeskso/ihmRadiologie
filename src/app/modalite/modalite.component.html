@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col s12 m12">
     <div class="chip">
-      Modalité
+      Modalités
     </div>
     <div class="chip green accent-4 white-text">
       Ajouter
@@ -13,21 +13,26 @@
   <ul class="collapsible" data-collapsible="accordion">
       <li>
           <div class="collapsible-header">
-              <div class='col s4'><label>Modalité</label></div>
-              <div class='col s4'><label>Pacs</label></div>
-              <div class='col s4'><label>Lien</label></div>
+              <div class='col s3'><label>Modalité</label></div>
+              <div class='col s3'><label>Pacs</label></div>
+              <div class='col s3'><label>Lien</label></div>
+              <div class='col s3'><label>Actions</label></div>
           </div>
       </li>
     <li *ngFor="let m of modalites"  >
         <div class="collapsible-header">
-            <div class='col s4'>
-              {{m.Nom}}
+            <div class='col s3'>
+              {{m.nom}}
             </div>
-            <div class='col s4'>
-              {{m.Pacs}}
+            <div class='col s3'>
+              {{m.pacs}}
             </div>
-            <div class='col s4'>
-              {{m.Lien}}
+            <div class='col s3'>
+              {{m.link}}
+            </div>
+            <div class='col s3'>
+              <a class="btn waves-effect waves-light amber darken-3"><i class="material-icons right">edit</i></a>
+              <button class="btn waves-effect waves-light red darken-3" type="submit" name="action"><i class="material-icons right">delete</i></button>
             </div>
         </div>
     </li>

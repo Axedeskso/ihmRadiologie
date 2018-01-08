@@ -14,28 +14,35 @@
     <ul class="collapsible" data-collapsible="accordion">
       <li>
         <div class="collapsible-header">
-          <div class='col s4'>
+          <div class='col s3'>
             <label>Code</label>
           </div>
-          <div class='col s4'>
+          <div class='col s3'>
             <label>Libellé</label>
           </div>
-          <div class='col s4'>
+          <div class='col s3'>
             <label>Coût</label>
           </div>
+          <div class='col s3'>
+              <label>Actions</label>
+            </div>
         </div>
       </li>
       <li *ngFor="let c of ccams">
         <div class="collapsible-header">
-          <div class='col s4'>
-            {{c.Code}}
+          <div class='col s3'>
+            {{c.code}}
           </div>
-          <div class='col s4'>
-            {{c.Libelle}}
+          <div class='col s3'>
+            {{c.libelle}}
           </div>
-          <div class='col s4'>
-            {{c.Cout}}
+          <div class='col s3'>
+            {{c.cout}}
           </div>
+          <div class='col s3'>
+              <a class="btn waves-effect waves-light amber darken-3"><i class="material-icons right">edit</i></a>
+              <button class="btn waves-effect waves-light red darken-3" type="submit" name="action"><i class="material-icons right">delete</i></button>
+            </div>
         </div>
       </li>
     </ul>
