@@ -3,46 +3,38 @@
     <div class="chip">
       CCAM
     </div>
-    <div class="chip green accent-4 white-text">
-      Ajouter
-  </div>
   </div>
 </div>
+
+<app-add-ccam></app-add-ccam>
 
 <div class="row">
   <div class='col s12'>
     <ul class="collapsible" data-collapsible="accordion">
       <li>
         <div class="collapsible-header">
-          <div class='col s3'>
+          <div class='col s4'>
             <label>Code</label>
           </div>
-          <div class='col s3'>
+          <div class='col s4'>
             <label>Libellé</label>
           </div>
-          <div class='col s3'>
+          <div class='col s4'>
             <label>Coût</label>
           </div>
-          <div class='col s3'>
-              <label>Actions</label>
-            </div>
         </div>
       </li>
       <li *ngFor="let c of ccams">
         <div class="collapsible-header">
-          <div class='col s3'>
-            {{c.id}} {{c.code}}
+          <div class='col s4'>
+            {{c.code}}
           </div>
-          <div class='col s3'>
+          <div class='col s4'>
             {{c.libelle}}
           </div>
-          <div class='col s3'>
+          <div class='col s4'>
             {{c.cout}}
           </div>
-          <div class='col s3'>
-              <a class="btn waves-effect waves-light amber darken-3"><i class="material-icons right">edit</i></a>
-              <button class="btn waves-effect waves-light red darken-3" (click)="delete(c)"><i class="material-icons right">delete</i></button>
-            </div>
         </div>
       </li>
     </ul>

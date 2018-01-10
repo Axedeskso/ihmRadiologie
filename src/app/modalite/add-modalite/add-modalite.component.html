@@ -1,0 +1,23 @@
+<div class="row">
+  <form class="col s12" [formGroup]="sampleForm" (ngSubmit)="add(sampleForm)" novalidate >
+    <div class="row">
+      <div class="input-field col s3">
+        <input id="modalite" type="text" name="modalite" formControlName="nom" class="validate" required>
+        <label for="modalite">Modalité</label>
+      </div>
+      <div class="input-field col s3">
+        <input id="pacs" type="text" name="pacs" formControlName="pacs" class="validate" required>
+        <label for="pacs">Pacs</label>
+      </div>
+      <div class="input-field col s4">
+        <input id="link" type="text" name="link" formControlName="link" class="validate" required>
+        <label for="link">Lien</label>
+      </div>
+      <div class="input-field col s1">
+        <button class="btn waves-effect waves-light green accent-4 white-text pulse" type="submit" name="action">
+          Ajouter
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

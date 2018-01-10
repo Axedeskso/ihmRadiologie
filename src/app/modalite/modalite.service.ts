@@ -1,30 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { modalite } from './modalite';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Modalite } from './modalite';
 
 @Injectable()
 export class ModaliteService {
 
   url = "http://localhost:8084/radiologie/webresources/modalites";
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  getModalites() : Promise<modalite[]> {
-    return this.http.get(this.url).toPromise().then(res => res.json());
-
-  };
-
-  addModalite() : void{
-
+  getModalites() {
+    return this.http.get<Modalite[]>(this.url);
   }
 
-  updateModalite(id: number) : void {
-    console.log("Update");
-  };
-
-  deleteModalite(id: number) : Promise<void> {
-    console.log("DELETE" +id);
-    return this.http.delete(this.url+"/"+id).toPromise().then(() => null);
-  };
+  addModalite(value : string) {
+    return this.http.post(this.url, value).subscribe();
+  }
 
 }

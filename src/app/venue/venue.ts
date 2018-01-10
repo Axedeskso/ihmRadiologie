@@ -1,12 +1,11 @@
-export class venue {
-  Iep: number;
-  Dd: string;
-  Df: string;
+import { Patient } from "../admission/patient";
 
-  constructor(iep:number, dd:string, df:string){
+export class Venue {
+  Iep: number;
+  
+
+  constructor(iep: number){
     this.Iep = iep;
-    this.Dd = dd;
-    this.Df = df;
   }
 
 }

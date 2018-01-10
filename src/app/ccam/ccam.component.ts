@@ -22,10 +22,5 @@ export class CcamComponent implements OnInit {
         console.log(err);
       });
   }
-
-  delete(ccam:Ccam) : void{
-    this.ccamService.delete(ccam);
-  }
-
   
 }

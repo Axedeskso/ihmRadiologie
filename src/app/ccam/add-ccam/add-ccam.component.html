@@ -1,0 +1,23 @@
+<div class="row">
+  <form class="col s12" [formGroup]="sampleForm" (ngSubmit)="add(sampleForm)" novalidate>
+    <div class="row">
+      <div class="input-field col s3">
+        <input id="code" type="text" name="code" formControlName="code" class="validate" required>
+        <label for="code">Code</label>
+      </div>
+      <div class="input-field col s3">
+        <input id="libelle" type="text" name="libelle" formControlName="libelle" class="validate" required>
+        <label for="libelle">Libellé</label>
+      </div>
+      <div class="input-field col s4">
+        <input id="cout" type="text" name="cout" formControlName="cout" class="validate" required>
+        <label for="cout">Cout</label>
+      </div>
+      <div class="input-field col s1">
+        <button class="btn waves-effect waves-light green accent-4 white-text pulse" type="submit" name="action">
+          Ajouter
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

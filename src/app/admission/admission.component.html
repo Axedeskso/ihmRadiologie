@@ -22,7 +22,8 @@
         </div>
       </li>
       <li *ngFor="let p of patients">
-        <div class="collapsible-header">
+        <div class="collapsible-header" routerLink="/admission/{{p.ipp}}/venues" routerLinkActive='active'>
+            <!---->
           <div class='col s4'>
             {{p.ipp}}
           </div>
@@ -32,9 +33,6 @@
           <div class='col s4'>
             {{p.prenom}}
           </div>
-        </div>
-        <div class='collapsible-body'>
-          <app-venue></app-venue>
         </div>
       </li>
     </ul>

@@ -5,66 +5,37 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <form class="col s12">
-    <div class="row">
-      <div class="input-field col s3">
-        <input id="first_name" type="text" class="validate">
-        <label for="first_name">Modalité</label>
-      </div>
-      <div class="input-field col s3">
-        <input id="last_name" type="text" class="validate">
-        <label for="last_name">Pacs</label>
-      </div>
-      <div class="input-field col s4">
-        <input id="last_name" type="text" class="validate">
-        <label for="last_name">Lien</label>
-      </div>
-      <div class="input-field col s1">
-        <button class="btn waves-effect waves-light green accent-4 white-text pulse" type="submit" name="action">
-          Ajouter
-        </button>
-      </div>
-    </div>
-  </form>
-</div>
+<app-add-modalite></app-add-modalite>
+
 
 <div class='col s12'>
   <ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
-        <div class='col s3'>
+        <div class='col s4'>
           <label>Modalité</label>
         </div>
-        <div class='col s3'>
+        <div class='col s4'>
           <label>Pacs</label>
         </div>
-        <div class='col s3'>
+        <div class='col s4'>
           <label>Lien</label>
         </div>
-        <div class='col s3'>
+        <div class='col s4'>
           <label>Actions</label>
         </div>
       </div>
     </li>
     <li *ngFor="let m of modalites">
       <div class="collapsible-header">
-        <div class='col s3'>
+        <div class='col s4'>
           {{m.nom}}
         </div>
-        <div class='col s3'>
+        <div class='col s4'>
           {{m.pacs}}
         </div>
-        <div class='col s3'>
+        <div class='col s4'>
           {{m.link}}
-        </div>
-        <div class='col s3'>
-          <a class="btn waves-effect waves-light amber darken-3" (click)="update(m.id)">
-            <i class="material-icons right">edit</i>
-          </a>
-          <button class="btn waves-effect waves-light red darken-3" (click)="delete(m.id)">
-            <i class="material-icons right">delete</i>
-          </button>
         </div>
       </div>
     </li>

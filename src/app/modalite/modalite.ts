@@ -1,4 +1,4 @@
-export class modalite {
+export class Modalite {
   Id: number;
   Nom: string;
   Pacs: string;

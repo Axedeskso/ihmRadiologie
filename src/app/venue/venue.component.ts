@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { venue } from './venue';
+import { Venue } from './venue';
+import { VenueService } from './venue.service';
 
 @Component({
   selector: 'app-venue',
@@ -9,33 +10,17 @@ import { venue } from './venue';
 })
 export class VenueComponent implements OnInit {
 
-  venues : Array<venue> = [
-    {
-      Iep: 123456789,
-      Dd:'01/01/2000',
-      Df:'02/01/2000'
-    },
-    {
-      Iep: 784951623,
-      Dd:'31/01/2000',
-      Df:'02/02/2000'
-    },
-    {
-      Iep: 362951847,
-      Dd:'01/01/2014',
-      Df:'04/06/2015'
-    },
-    {
-      Iep: 124357689,
-      Dd:'12/09/2017',
-      Df:'02/09/2018'
-    }
+  venues : Venue[];
 
-  ]
+  constructor(private venueService : VenueService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() : void {
+    this.venueService.getVenues().subscribe(data => {
+      console.log(data);
+      this.venues = data;
+      }, err => {
+        console.log(err);
+      });
   }
 
 }

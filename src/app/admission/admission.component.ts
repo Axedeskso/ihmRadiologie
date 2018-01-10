@@ -15,7 +15,12 @@ export class AdmissionComponent {
   constructor(private admissionService : AdmissionService) { }
 
   ngOnInit() : void {
-    this.admissionService.getPatients().then(res => this.patients = res);
+    this.admissionService.getPatients().subscribe(data => {
+      console.log(data);
+      this.patients = data;
+      }, err => {
+        console.log(err);
+      });
   }
 
 }
