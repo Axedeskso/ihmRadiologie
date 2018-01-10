@@ -17,4 +17,12 @@ export class ModaliteComponent implements OnInit {
     this.modaliteService.getModalites().then(res => this.modalites = res);
   }
 
+  update(id: number) : void {
+    this.modaliteService.updateModalite(id);
+  }
+
+  delete(id:number) : void{
+    this.modaliteService.deleteModalite(id);
+  }
+
 }

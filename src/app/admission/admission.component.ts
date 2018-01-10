@@ -14,7 +14,7 @@ export class AdmissionComponent {
 
   constructor(private admissionService : AdmissionService) { }
 
-  ngOnInit() : void { 
+  ngOnInit() : void {
     this.admissionService.getPatients().then(res => this.patients = res);
   }
 

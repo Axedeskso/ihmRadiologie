@@ -1,4 +1,5 @@
 export class modalite {
+  Id: number;
   Nom: string;
   Pacs: string;
   Lien: string;

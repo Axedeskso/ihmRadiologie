@@ -1,4 +1,5 @@
-export class ccam {
+export class Ccam {
+  Id : number;
   Code: string;
   Libelle: string;
   Cout: number;

@@ -31,7 +31,7 @@
       <li *ngFor="let c of ccams">
         <div class="collapsible-header">
           <div class='col s3'>
-            {{c.code}}
+            {{c.id}} {{c.code}}
           </div>
           <div class='col s3'>
             {{c.libelle}}
@@ -41,7 +41,7 @@
           </div>
           <div class='col s3'>
               <a class="btn waves-effect waves-light amber darken-3"><i class="material-icons right">edit</i></a>
-              <button class="btn waves-effect waves-light red darken-3" type="submit" name="action"><i class="material-icons right">delete</i></button>
+              <button class="btn waves-effect waves-light red darken-3" (click)="delete(c)"><i class="material-icons right">delete</i></button>
             </div>
         </div>
       </li>

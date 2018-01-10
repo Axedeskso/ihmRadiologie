@@ -12,6 +12,19 @@ export class ModaliteService {
   getModalites() : Promise<modalite[]> {
     return this.http.get(this.url).toPromise().then(res => res.json());
 
+  };
+
+  addModalite() : void{
+
   }
+
+  updateModalite(id: number) : void {
+    console.log("Update");
+  };
+
+  deleteModalite(id: number) : Promise<void> {
+    console.log("DELETE" +id);
+    return this.http.delete(this.url+"/"+id).toPromise().then(() => null);
+  };
 
 }

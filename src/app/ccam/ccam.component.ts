@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ccam } from './ccam';
+import { Ccam } from './ccam';
 import { CcamService } from './ccam.service';
 
 @Component({
@@ -10,12 +10,22 @@ import { CcamService } from './ccam.service';
 })
 export class CcamComponent implements OnInit {
 
-  ccams : ccam[];
+  ccams : Ccam[];
 
   constructor(private ccamService : CcamService) { }
 
   ngOnInit() : void { 
-    this.ccamService.getCCams().then(res => this.ccams = res);
+    this.ccamService.getCCams().subscribe(data => {
+      console.log(data);
+      this.ccams = data;
+      }, err => {
+        console.log(err);
+      });
   }
 
+  delete(ccam:Ccam) : void{
+    this.ccamService.delete(ccam);
+  }
+
+  
 }

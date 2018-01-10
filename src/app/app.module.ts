@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
@@ -15,7 +15,7 @@ import { AdmissionService } from './admission/admission.service';
 import { CcamComponent } from './ccam/ccam.component';
 import { CcamService } from './ccam/ccam.service';
 
-import { VenueComponent } from './admission/venue/venue.component';
+import { VenueComponent } from './venue/venue.component';
 
 import { ActeComponent } from './acte/acte.component';
 
@@ -47,7 +47,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true }
     ),
-    HttpModule
+    HttpClientModule
   ],
   providers: [AdmissionService, CcamService, ModaliteService ],
   bootstrap: [AppComponent]
