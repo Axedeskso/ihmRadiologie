@@ -1,12 +1,12 @@
 export class Patient {
   ipp: number;
-  Nom: string;
-  Prenom: string;
+  nom: string;
+  prenom: string;
 
   constructor(ipp:number,nom:string,prenom:string){
     this.ipp = ipp;
-    this.Nom = nom;
-    this.Prenom = prenom;
+    this.nom = nom;
+    this.prenom = prenom;
   }
 
 }

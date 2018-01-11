@@ -11,16 +11,18 @@ import { VenueService } from './venue.service';
 export class VenueComponent implements OnInit {
 
   venues : Venue[];
+  nb : number;
 
   constructor(private venueService : VenueService) { }
 
   ngOnInit() : void {
-    this.venueService.getVenues().subscribe(data => {
-      console.log(data);
-      this.venues = data;
-      }, err => {
-        console.log(err);
-      });
-  }
 
+      this.venueService.getVenues().subscribe(data => {
+        console.log(data);
+        this.venues = data;
+        this.nb = data.length;
+        }, err => {
+          console.log(err);
+        });
+  }
 }

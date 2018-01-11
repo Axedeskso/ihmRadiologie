@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { CcamService } from '../../ccam/ccam.service';
+import { Ccam } from '../../ccam/ccam';
 
 @Component({
   selector: 'app-add-acte',
@@ -8,9 +10,17 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class AddActeComponent implements OnInit {
 
-  constructor() { }
+  ccams : Ccam[];
+
+  constructor(private ccamService : CcamService) { }
 
   ngOnInit() {
+    this.ccamService.getCCams().subscribe(data => {
+      console.log(data);
+      this.ccams = data;
+      }, err => {
+        console.log(err);
+      });
   }
 
 }

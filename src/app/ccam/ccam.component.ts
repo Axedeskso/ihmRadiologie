@@ -11,6 +11,7 @@ import { CcamService } from './ccam.service';
 export class CcamComponent implements OnInit {
 
   ccams : Ccam[];
+  nb : number;
 
   constructor(private ccamService : CcamService) { }
 
@@ -18,6 +19,7 @@ export class CcamComponent implements OnInit {
     this.ccamService.getCCams().subscribe(data => {
       console.log(data);
       this.ccams = data;
+      this.nb = data.length;
       }, err => {
         console.log(err);
       });

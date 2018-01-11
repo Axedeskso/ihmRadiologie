@@ -11,6 +11,7 @@ import { AdmissionService } from './admission.service';
 export class AdmissionComponent {
 
   patients : Patient[];
+  nb : number;
 
   constructor(private admissionService : AdmissionService) { }
 
@@ -18,6 +19,7 @@ export class AdmissionComponent {
     this.admissionService.getPatients().subscribe(data => {
       console.log(data);
       this.patients = data;
+      this.nb = data.length;
       }, err => {
         console.log(err);
       });

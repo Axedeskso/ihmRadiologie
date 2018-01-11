@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
@@ -26,16 +26,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddModaliteComponent } from './modalite/add-modalite/add-modalite.component';
 import { AddCcamComponent } from './ccam/add-ccam/add-ccam.component';
 import { AddActeComponent } from './acte/add-acte/add-acte.component';
+import { PatientVenuesComponent } from './admission/patient-venues/patient-venues.component';
+import { ActeService } from './acte/acte.service';
+import { VenuesActesComponent } from './admission/patient-venues/venues-actes/venues-actes.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'admission', component: AdmissionComponent },
- // { path: 'admission/:id/venues', component: VenueComponent },
-  { path: 'admission/venues/:id', component: ActeComponent },
+  { path: 'admission', component: AdmissionComponent},
+  { path: 'admission/:id/venues', component: PatientVenuesComponent },
+  { path: 'admission/:id/venues/:iep/actes', component: VenuesActesComponent },
   { path: 'ccam', component: CcamComponent },
   { path: 'modalites', component: ModaliteComponent },
-  { path: 'venues', component: VenueComponent }
+  { path: 'venues', component: VenueComponent },
+  { path: 'actes', component: ActeComponent }
 ];
 
 @NgModule({
@@ -50,7 +54,9 @@ const appRoutes: Routes = [
     DashboardComponent,
     AddModaliteComponent,
     AddCcamComponent,
-    AddActeComponent
+    AddActeComponent,
+    PatientVenuesComponent,
+    VenuesActesComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +68,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AdmissionService, CcamService, ModaliteService, VenueService ],
+  providers: [AdmissionService, CcamService, ModaliteService, VenueService, ActeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

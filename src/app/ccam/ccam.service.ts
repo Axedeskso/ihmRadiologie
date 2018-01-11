@@ -19,6 +19,7 @@ export class CcamService {
   }
   
   addCcam(value : string) {
+    console.log('Ajout effectué')
     return this.http.post(this.url, value).subscribe();
   }
 

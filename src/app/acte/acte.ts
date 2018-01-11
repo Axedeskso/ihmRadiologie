@@ -1,4 +1,4 @@
-export class acte {
+export class Acte {
   Code: string;
   Date: string;
   Heure: string;

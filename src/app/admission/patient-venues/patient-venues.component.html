@@ -1,9 +1,17 @@
 <div class="row">
     <div class="col s12 m12">
-            <div class="chip green accent-4 ">
-                    <a class=" white-text" routerLink="" routerLinkActive='active'>Tableau de bord</a>
-                  </div>
-                  <div class="chip blue accent-4 white-text">
+        <div class="chip green accent-4">
+            <a class="white-text" routerLink="" routerLinkActive='active'>Tableau de bord</a>
+        </div>
+        <div class="chip green accent-4">
+            <a class="white-text" routerLink="/admission" routerLinkActive='active'>
+                Admission
+            </a>
+        </div>
+        <div class="chip pulse">
+            {{ipp}} : {{nom}} {{prenom}}
+        </div>
+        <div class="chip blue accent-4 white-text">
             {{nb}} Venue<span *ngIf="nb > 1">s</span>
         </div>
     </div>
@@ -26,7 +34,7 @@
                 </div>
             </li>
             <li *ngFor='let v of venues'>
-                <div class="collapsible-header">
+                <div class="collapsible-header" routerLink="/admission/{{ipp}}/venues/{{v.iep}}/actes" routerLinkActive='active'>
                     <div class='col s4'>
                         {{v.iep}}
                     </div>

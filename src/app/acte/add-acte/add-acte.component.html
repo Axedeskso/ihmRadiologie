@@ -1,3 +1,19 @@
-<p>
-  add-acte works!
-</p>
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+          <div class=" col s10">
+              <select *ngFor='let c of ccams' class="browser-default" material-select>
+                <option value="" disabled>Choisissez un acte</option>
+                <option value="1">{{c.libelle}}</option>
+              </select>
+            </div>
+        <div class="input-field col s1">
+          <button class="btn waves-effect waves-light green accent-4 white-text pulse" type="submit" name="action">
+            Ajouter
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  

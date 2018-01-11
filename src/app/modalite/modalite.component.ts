@@ -12,6 +12,7 @@ import { ModaliteService } from './modalite.service';
 export class ModaliteComponent implements OnInit {
 
   modalites : Modalite[];
+  nb : number;
   
   constructor(private modaliteService : ModaliteService) { }
 
@@ -20,6 +21,7 @@ export class ModaliteComponent implements OnInit {
     this.modaliteService.getModalites().subscribe(data => {
       console.log(data);
       this.modalites = data;
+      this.nb = data.length;
       }, err => {
         console.log(err);
       });

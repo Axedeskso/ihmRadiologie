@@ -13,4 +13,8 @@ export class AdmissionService {
     return this.http.get<Patient[]>(this.url);
   }
 
+  getPatient(ipp: number) {
+    return this.http.get<Patient>(this.url+"/"+ipp);
+  }
+
 }

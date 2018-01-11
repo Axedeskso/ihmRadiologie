@@ -25,5 +25,6 @@ export class AddModaliteComponent implements OnInit {
   add(sampleForm: NgForm) : void{
     this.modaliteService.addModalite(sampleForm.value);
     location.reload();
+    console.log('Ajout effectué');
   }
 }
